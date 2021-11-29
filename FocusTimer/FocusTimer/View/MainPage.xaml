@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FocusTimer.ViewModel"
+             x:Class="FocusTimer.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout BackgroundColor="{Binding BtnStacklayoutMainColor}" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="15" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            
+            <Label TextColor="White" Grid.Row="1" Grid.Column="1" FontSize="20"  Text="Repeat ?" />
+            <Button   BackgroundColor="{Binding BtnRepeatBackGroundColor}" TextColor="White" Grid.Row="1" Grid.Column="2"  Text="{Binding BtnRepeatText}" IsEnabled="{Binding BtnRepeatIsEnabled}" Command="{Binding RepeatCommand}"/>
+
+
+            <Label FontSize="20" TextColor="White" Grid.Column="4" Grid.Row="1" Text="Sound ?" />
+            <Button   BackgroundColor="{Binding BtnSoundBackgroundColor}"  TextColor="White" Grid.Row="1" Grid.Column="5"  Text="{Binding BtnSoundText}"  Command="{Binding SoundCommand}"/>
+
+            <Button BackgroundColor="#2ecc71" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" TextColor="White"  FontSize="24" FontAttributes="Bold"  Text="{Binding TimerText}" />
+
+            <Label Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="5" Text="How long?" FontSize="20"   TextColor="White" />
+
+            <Picker Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="1"  Title="0"  ItemsSource="{Binding PickerList}" ItemDisplayBinding="{Binding value}" SelectedItem="{Binding SelectedTime}"  FontSize="20"  TextColor="White" />
+
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5"  IsEnabled="{Binding BtnStartIsEnabled}"  BackgroundColor="#3498db" TextColor="White" Text="Start" x:Name="BtnStart" Command="{Binding StartCommand}" />
+            <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5"  BackgroundColor="#e74c3c" TextColor="White" Text="Stop" Command="{Binding StopCommand}"  />
+
+
+        </Grid>
+        
+     
+           
+            
+            
+
+      
+        
+
+       
+
+       
+       
+    </StackLayout>
+
+</ContentPage>
